@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/icon.svg')}}" type="image/svg+xml">
     <style>
         /* --- General Resets & Body Styling --- */
         body {
@@ -107,7 +108,7 @@
 
 <body>
     <!-- Title -->
-    <h1 class="main-title">Apa Itu Palindrom?</h1>
+    <h1 class=" main-title">Apa Itu Palindrom?</h1>
 
     <div class="content-wrapper">
         <!-- Article -->
