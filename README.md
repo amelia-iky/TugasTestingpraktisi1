@@ -1,28 +1,41 @@
-# todo-list
+# TODO-LIST
+
 `todo-list` is a free, self-hosted, open source app, written using laravel 11.x, that may help You organise your tasks.
 
 # Installation using MySQL
+
 1. Clone the git repository
-```git
-git clone https://github.com/Fafikk/todo-list.git
+
+```bash
+git clone https://github.com/amelia-iky/TugasTestingpraktisi1
 ```
-2. Install composer dependencies
+
+1. Move to root directory
+
+```bash
+cd TugasTestingpraktisi1/
+```
+
+3. Install composer dependencies
+
 ```bash
 composer install
 ```
-3. Copy environment file
+
+4. Copy environment file
+
 ```bash
 cp .env.example .env
 ```
-4. Generate app key
-```bash
-php artisan key:generate
-```
+
 5. Migrate database
+
 ```bash
 php artisan migrate
 ```
-6. Start development server:
+
+6. Start development server
+
 ```bash
 php artisan serve
 ```
