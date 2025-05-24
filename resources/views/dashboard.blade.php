@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Palindrome Information - Tugas 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* --- General Resets & Body Styling --- */
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
@@ -14,12 +15,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
             background-color: #f0f2f5;
             color: #333;
             padding: 20px;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
 
+        /* --- Main Title Styling --- */
         .main-title {
             font-size: 3em;
             color: #2c3e50;
@@ -29,52 +33,57 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .menu-container {
+        /* --- Content Wrapper Styling (Main Container) --- */
+        .content-wrapper {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 20px;
-            max-width: 1200px;
+            flex-direction: column;
+            align-items: center;
+            max-width: 900px;
             width: 100%;
+            box-sizing: border-box;
+            flex-grow: 1;
+            justify-content: center;
         }
 
-        .menu-box {
+        /* --- Article Box Styling --- */
+        .article-box {
             background-color: #ffffff;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: 1px solid #e0e0e0;
+            padding: 20px 30px;
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #444;
+            width: 100%;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        .menu-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .menu-box h3 {
+        .article-box h2 {
+            color: #4CAF50;
+            font-size: 2em;
             margin-top: 0;
             margin-bottom: 20px;
-            color: #4CAF50;
-            font-size: 1.8em;
-            font-weight: 600;
+            text-align: center;
         }
 
-        .menu-box p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 25px;
-            flex-grow: 1;
+        .article-box p {
+            margin-bottom: 1em;
+        }
+
+        .article-box strong {
+            color: #2c3e50;
+        }
+
+        .menu-box {
+            padding: 10px 0 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .menu-box a {
@@ -86,36 +95,37 @@
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.3s ease;
-            margin-top: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .menu-box a:hover {
             background-color: #45a049;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body>
-    <h1 class="main-title">Tugas 1</h1>
-    <div class="menu-container">
-        <div class="menu-box">
-            <h3>Calculator</h3>
-            <p>A simple calculator for basic arithmetic operations.</p>
-            <a href="{{ url('/calculator') }}">Go to Calculator</a>
-        </div>
+    <h1 class="main-title">Apa Itu Palindrom?</h1>
 
-        <div class="menu-box">
-            <h3>Loan</h3>
-            <p>Estimate your loan payments with our easy-to-use tool.</p>
-            <a href="{{ url('/loan') }}">Go to Loan Calculator</a>
-        </div>
+    <div class="content-wrapper">
+        <div class="article-box">
+            <p>
+                Dalam dunia bahasa dan matematika, <strong>palindrom</strong> adalah kata, frasa, angka, atau urutan karakter lainnya yang berbunyi atau terbaca sama baik dari depan maupun dari belakang. Konsep ini telah memukau banyak orang selama berabad-abad karena sifatnya yang unik dan simetris.
+            </p>
+            <p>
+                Contoh sederhana dari palindrom adalah kata-kata seperti <strong>"kakak"</strong> atau <strong>"level"</strong>. Jika kita membaca kata ini dari kiri ke kanan, lalu dari kanan ke kiri, ejaannya tetap sama.
+            </p>
+            <p>
+                Tidak hanya kata tunggal, frasa dan kalimat juga bisa menjadi palindrom. Contoh yang terkenal dalam bahasa Indonesia adalah <strong>"Kasur ini rusak"</strong>. Untuk frasa dan kalimat, biasanya spasi, tanda baca, dan huruf besar/kecil diabaikan saat memeriksa apakah itu palindrom.
+            </p>
 
-        <div class="menu-box">
-            <h3>Palindrome</h3>
-            <p>Check if a word or phrase is a palindrome.</p>
-            <a href="{{ url('/palindrome') }}">Go to Palindrome Checker</a>
+            <div class="menu-box">
+                <a href="{{ url('/palindrome') }}">Cek Palindrom</a>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
