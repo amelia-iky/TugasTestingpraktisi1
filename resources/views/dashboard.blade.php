@@ -106,9 +106,11 @@
 </head>
 
 <body>
+    <!-- Title -->
     <h1 class="main-title">Apa Itu Palindrom?</h1>
 
     <div class="content-wrapper">
+        <!-- Article -->
         <div class="article-box">
             <p>
                 Dalam dunia bahasa dan matematika, <strong>palindrom</strong> adalah kata, frasa, angka, atau urutan karakter lainnya yang berbunyi atau terbaca sama baik dari depan maupun dari belakang. Konsep ini telah memukau banyak orang selama berabad-abad karena sifatnya yang unik dan simetris.
@@ -120,6 +122,7 @@
                 Tidak hanya kata tunggal, frasa dan kalimat juga bisa menjadi palindrom. Contoh yang terkenal dalam bahasa Indonesia adalah <strong>"Kasur ini rusak"</strong>. Untuk frasa dan kalimat, biasanya spasi, tanda baca, dan huruf besar/kecil diabaikan saat memeriksa apakah itu palindrom.
             </p>
 
+            <!-- Checker Pages -->
             <div class="menu-box">
                 <a href="{{ url('/palindrome') }}">Cek Palindrom</a>
             </div>
