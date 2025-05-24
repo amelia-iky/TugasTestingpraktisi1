@@ -56,7 +56,6 @@
             font-size: 1.2em;
         }
 
-        /* --- Akhir Tombol Kembali --- */
         h1 {
             font-size: 2.5em;
             color: #2c3e50;
@@ -132,7 +131,6 @@
             line-height: 1.6;
         }
 
-        /* Pastikan class ini benar dan tidak ditimpa */
         .text-success {
             color: #28a745 !important;
             font-weight: 700;
