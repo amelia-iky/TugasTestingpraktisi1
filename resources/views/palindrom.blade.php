@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome Checker</title>
+    <title>Palindrome Checker - Tugas 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -30,8 +30,33 @@
             max-width: 600px;
             width: 100%;
             box-sizing: border-box;
+            position: relative;
         }
 
+        /* --- Tombol Kembali --- */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #4CAF50;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        /* --- Akhir Tombol Kembali --- */
         h1 {
             font-size: 2.5em;
             color: #2c3e50;
@@ -107,6 +132,7 @@
             line-height: 1.6;
         }
 
+        /* Pastikan class ini benar dan tidak ditimpa */
         .text-success {
             color: #28a745 !important;
             font-weight: 700;
@@ -136,10 +162,16 @@
             font-size: 0.95em;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
+        <!-- Tombol Kembali -->
+        <a href="{{ url('/') }}" class="back-button">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </a>
+
         <!-- Title -->
         <h1>Palindrome Checker</h1>
 
@@ -151,7 +183,7 @@
             <button type="submit">Submit</button>
         </form>
 
-        <!-- Result Section -->
+        <!-- Result -->
         @if (isset($isPalindrom))
         <div class="result-section">
             <h3>Hasil</h3>
@@ -164,7 +196,7 @@
         </div>
         @endif
 
-        <!-- Error List -->
+        <!-- Error Handling -->
         @if ($errors->any())
         <ul class="error-list">
             @foreach ($errors->all() as $error)
@@ -173,7 +205,6 @@
         </ul>
         @endif
     </div>
-
 </body>
 
 </html>
