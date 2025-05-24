@@ -3,63 +3,119 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>{{ config('app.name') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    <!-- Roboto font embed -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        .main-title {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
 
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        .menu-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-box h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .menu-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .menu-box a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .menu-box a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 
 <body>
+    <h1 class="main-title">Tugas 1</h1>
+    <div class="menu-container">
+        <div class="menu-box">
+            <h3>Calculator</h3>
+            <p>A simple calculator for basic arithmetic operations.</p>
+            <a href="{{ url('/calculator') }}">Go to Calculator</a>
+        </div>
 
-    <header>
-        <form action="{{ url('/item') }}" method="POST">
-            @csrf
-            <input type="text" placeholder="Enter an activity, To add tag please follow this format (activity|tag1,tag2,tag3...)" name="item" required>
-            <button id="add">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-                    <g>
-                        <path class="fill"
-                            d="M16,8c0,0.5-0.5,1-1,1H9v6c0,0.5-0.5,1-1,1s-1-0.5-1-1V9H1C0.5,9,0,8.5,0,8s0.5-1,1-1h6V1c0-0.5,0.5-1,1-1s1,0.5,1,1v6h6C15.5,7,16,7.5,16,8z" />
-                    </g>
-                </svg>
-            </button>
-        </form>
-    </header>
+        <div class="menu-box">
+            <h3>Loan</h3>
+            <p>Estimate your loan payments with our easy-to-use tool.</p>
+            <a href="{{ url('/loan') }}">Go to Loan Calculator</a>
+        </div>
 
-    <div class="container">
-        <!-- Tasks to-do -->
-        <ul class="todo" id="todo">
-            @foreach ($tasks as $task)
-                <li>
-                    {!! $task->name !!}
-                    <form action="{{ route('item.destroy', $task->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <span style="color: gray; margin-right: 15px;">Created at: {{ $task->created_at }}</span>
-                        <button class="delete">
-                            <i class="fa-light fa-trash-can"></i>
-                        </button>
-                    </form>
-                </li>
-            @endforeach
-        </ul>
+        <div class="menu-box">
+            <h3>Palindrome</h3>
+            <p>Check if a word or phrase is a palindrome.</p>
+            <a href="{{ url('/palindrome') }}">Go to Palindrome Checker</a>
+        </div>
     </div>
-
-    <footer>
-        <span>Made with <i class="fa-solid fa-heart"></i> by <a href="https://github.com/deyan-ardi"
-                target="_blank">Deyan
-                Ardi</a>
-        </span>
-    </footer>
 </body>
 
 </html>
