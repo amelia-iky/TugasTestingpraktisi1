@@ -1,6 +1,6 @@
-# TODO-LIST
+# Todo-List
 
-`todo-list` is a free, self-hosted, open source app, written using laravel 11.x, that may help You organise your tasks.
+`Todo-List` is a free, self-hosted, open source app, written using laravel 11.x, that may help You organise your tasks.
 
 # Installation using MySQL
 
