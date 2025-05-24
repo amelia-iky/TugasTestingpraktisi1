@@ -10,7 +10,7 @@
 git clone https://github.com/amelia-iky/TugasTestingpraktisi1
 ```
 
-1. Move to root directory
+2. Move to root directory
 
 ```bash
 cd TugasTestingpraktisi1/
